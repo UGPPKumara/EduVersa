@@ -1,4 +1,5 @@
 # EduVersa - LMS
+<p>EduVersa is an innovative web application that offers a comprehensive, all-in-one learning management system, empowering users with personalized learning paths, collaboration tools, and a vast knowledge hub, all within a user-friendly interface.</p>
 
 ## Developers
 
