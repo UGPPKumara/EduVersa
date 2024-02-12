@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px black solid;
+  border-radius: 10px;
+  width: 30%;
+  padding: 20px;
+}
+
+.login {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.main-box input {
+  width: 100%;
+}
+
+input {
+  margin-bottom: 20px;
+}
