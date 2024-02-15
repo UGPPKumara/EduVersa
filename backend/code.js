@@ -27,8 +27,18 @@ login.addEventListener('click', (e) => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+
+        if (email.endsWith("@lec.appsc.sab.ac.lk")) {
+          alert("Login Success to lec")
+
+          
+        }else if (email.endsWith("@std.appsc.sab.ac.lk")) {
+          alert("Login Success to student")
+
+        }else{
+          alert("Fail to login")
+        }
         // ...
-          alert("Login Success")
       })
       .catch((error) => {
           const errorCode = error.code;
