@@ -1,0 +1,29 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  box-shadow: var(--admin-shadow-bottom);
+  padding: 40px;
+  background-color: var(--dark-blue-2);
+  color: var(--white);
+}
+
+.menu-icon{
+  display: none;
+}
+.logo{
+  height: 40px;
+  width: auto;
+}
+.header-right{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.header-left{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}

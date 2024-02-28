@@ -1,15 +1,10 @@
 import React from 'react';
 import './App.css';
-import Login from './Components/Login/Login';
-
-
+import AdminMain from './Assests/Components/Admin/Pages/AdminMain/AdminMain';
 
 function App() {
   return (
-    <div>
-      <Login />
-    </div>
-    
+    <AdminMain/>   
   );
 }
 
