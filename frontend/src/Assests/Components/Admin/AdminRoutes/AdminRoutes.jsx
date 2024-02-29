@@ -11,7 +11,7 @@ import DegreeManagement from '../Pages/Courses/DegreeManagement/DegreeManagement
 const AdminRoutes = () => {
   return (
     <Routes>
-        <Route exact path='/AdminDashboard' element={<AdminDashboard />} />
+        <Route index path='/AdminDashboard' element={<AdminDashboard />} />
         <Route path='/StudentManagement' element={<StudentManagement />} />
         <Route path='/AdminLectures' element={<AdminLectures />} />
         <Route path='/Profile' element={<Profile />} />

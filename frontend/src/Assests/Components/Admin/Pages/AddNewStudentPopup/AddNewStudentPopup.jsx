@@ -124,3 +124,4 @@ const AddNewStudentPopup = ({ isOpen, onRequestClose, onSave }) => {
 };
 
 export default AddNewStudentPopup;
+

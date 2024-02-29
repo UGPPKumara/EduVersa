@@ -9,7 +9,7 @@ const AdminMain = () => {
   return (
     <div className='AdminMain'>
       <Header />
-      <space className="sidebar-footer">
+      <space className="sidebar-home">
         <Sidebar />
         <Home />
       </space>

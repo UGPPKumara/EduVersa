@@ -1,11 +1,11 @@
-.AdminMain{
+.StudentMain{
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
 
-.sidebar-home{
+.sidebar-footer{
   display: flex;
   flex: 1;
 }
