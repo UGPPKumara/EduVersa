@@ -1,19 +1,22 @@
-.degree-table {
+.alumina-table {
   /* Style the student table */
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-.degree-table th,
-.degree-table td {
+.alumina-table th,
+.alumina-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
-.degree-table th {
+.alumina-table th {
   background-color: #f2f2f2;
+}
+.profile-pic > img{
+  width: 100px;
 }
 .update{
   margin-right: 10px;

@@ -1,17 +1,12 @@
-/* Assuming this is your Faculty Management CSS */
-
-.faculty-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .faculty-table {
+  /* Style the student table */
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.faculty-table th, .faculty-table td {
+.faculty-table th,
+.faculty-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
@@ -20,25 +15,10 @@
 .faculty-table th {
   background-color: #f2f2f2;
 }
-
-.action-btn {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 20px;
+.update{
+  margin-right: 10px;
 }
-
-.action-btn button {
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-#delete {
-  background-color: #ff0000;
-  color: #fff;
-  border: 1px solid #ff0000;
-}
-
-#delete:hover {
-  border: 1px solid var(--white);
+.delete{
+  background-color: red !important;
+  border: 1px solid red;
 }

@@ -21,6 +21,9 @@
   align-items: center;
   margin-bottom: 20px;
 }
+.modal-header > h2{
+  color: black;
+}
 .close-button {
   background: none;
   border: none;
@@ -45,7 +48,7 @@ label {
   justify-content: space-between;
 }
 
-input {
+input , select {
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 10px;

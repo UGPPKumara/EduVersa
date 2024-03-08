@@ -34,20 +34,18 @@ const AddNewDegree = ({ isOpen, onRequestClose, onSave }) => {
       <form onSubmit={handleSubmit}>
         {/* Add form fields for degree details */}
         <label>
+        <label>
+          Department:
+          <select>
+          <option value="someOption">CIS</option>
+            <option value="otherOption">SE</option>
+          </select>
+        </label>
           Degree Name:
           <input
             type="text"
             name="degreeName"
             value={formData.degreeName}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Department:
-          <input
-            type="text"
-            name="department"
-            value={formData.department}
             onChange={handleChange}
           />
         </label>

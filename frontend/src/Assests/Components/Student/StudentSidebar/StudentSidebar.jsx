@@ -12,56 +12,35 @@ const Sidebar = () => {
       <div className='sidebar-menu'>
         <ul>
           <li>
-            <Link to="/CourseManagement" >
+            <Link to="/StudentCourses ">
               <BsBookFill className='icon'/>
              Courses
               </Link>
           </li>
-          <li className='sidebar-menu-item'>            
-            <Link to="/StudentManagement" >
-              <BsPersonBadge className='icon'/>
-              Students
-              </Link>
-          </li>
+          
           <li id='sidebar-menu-item'>            
             <Link to="/AdminLectures" >
               <BsPersonFill className='icon'/>
-              Teachers
+              Ask Question
               </Link>
           </li>
           <li className='sidebar-menu-item'>
             <Link to="/" >
               <BsPeopleFill className='icon'/>
-              Alumina
+              Self Learning
               </Link>
           </li>
+        
           <li className='sidebar-menu-item'>
-            {/* Sub-links for Courses */}
-            <ul className="sub-links">
-              <li className='sub-links-item'>
-                <Link to="/FacultyManagement" >
-                  <BsBookFill className='icon'/>
-                  Faculty Management
-                </Link>
-              </li>
-              <li className='sub-links-item'>
-                <Link to="/DegreeManagement" >
-                  <BsBookmarksFill className='icon'/>
-                  Degree Management
-                </Link>
-              </li>
-              <li className='sub-links-item'>
-                <Link to="/CourseManagement" >
-                  <BsFileTextFill className='icon'/>
-                  Course Management
-                </Link>
-              </li>
-            </ul>
+            <Link to="/" >
+              <BsGearFill className='icon'/>
+              Chat
+              </Link>
           </li>
           <li className='sidebar-menu-item'>
             <Link to="/" >
               <BsGearFill className='icon'/>
-              Settings
+             Setting
               </Link>
           </li>
         </ul>

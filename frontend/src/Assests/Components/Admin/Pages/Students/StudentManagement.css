@@ -1,0 +1,48 @@
+.student-header , .teacher-header , .alumina-header, .admin-header, .faculty-header, .degree-header , .course-header{
+  display: flex;
+  background-color: var(--dark-blue);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+.add-student-button , .add-teacher-button, .add-alumina-button, .add-faculty-button, .add-degree-button, .add-course-button{
+  width: auto;
+  height: 60px;
+  margin: 20px;
+}
+
+.student-header , .teacher-header, .alumina-header, .admin-header, .faculty-header, .degree-header, .course-header > h2{
+  padding-left: 20px;
+}
+
+
+.student-table {
+  /* Style the student table */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.student-table th {
+  background-color: #f2f2f2;
+}
+
+.profile-pic > img{
+  width: 100px;
+}
+.update{
+  margin-right: 10px;
+}
+.delete{
+  background-color: red !important;
+  border: 1px solid red;
+}

@@ -1,0 +1,90 @@
+.admin-header{
+  margin-bottom: 20px !important;
+}
+.count{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.count-card-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  width: 20%;
+  /* padding: 20px; */
+}
+.count-text{
+  padding: 20px;
+}
+.count-card-1 > a{
+  color: white;
+  text-decoration: none;
+  background-color: rgb(255, 114, 114);
+  padding: 20px;
+}
+.count-card-1 > a:hover{
+  background-color: rgb(244, 146, 146);
+
+}
+.count-card-2{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:green;
+  color: white;
+  width: 20%;
+}
+.count-card-2 > a{
+  color: white;
+  text-decoration: none;
+  background-color: rgb(88, 255, 88);
+  padding: 20px;
+}
+.count-card-2 > a:hover{
+  background-color: rgb(121, 229, 121);
+
+}
+.count-card-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: gold;
+  color: white;
+  width: 20%;
+}
+.count-card-3 > a{
+  color: white;
+  text-decoration: none;
+  background-color: rgb(233, 210, 77);
+  padding: 20px;
+}
+.count-card-3 > a:hover{
+  background-color: rgb(252, 233, 128);
+
+}
+.count-card-4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  color: white;
+  width: 20%;
+}
+.count-card-4 > a{
+  color: white;
+  text-decoration: none;
+  background-color: rgb(73, 73, 248);
+  padding: 20px;
+}
+.count-card-4 > a:hover{
+  background-color: rgb(118, 118, 246);
+
+}
+h3{
+  font-weight: 400 ;
+}

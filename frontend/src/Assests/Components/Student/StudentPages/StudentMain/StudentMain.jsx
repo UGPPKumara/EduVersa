@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../../Admin/Header/Header'
 import StudentSidebar from '../../StudentSidebar/StudentSidebar'
-import Home from '../../../Admin/Home/Home'
+import StudentHome from '../../StudentHome/StudentHome'
 import './StudentMain.css'
 
 const StudentMain = () => {
@@ -10,7 +10,7 @@ const StudentMain = () => {
       <Header/>
       <div className="sidebar-home">
         <StudentSidebar />
-        <Home />
+        <StudentHome />
       </div>
     </div>
   )

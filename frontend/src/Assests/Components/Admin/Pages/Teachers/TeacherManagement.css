@@ -1,19 +1,23 @@
-.degree-table {
+.teacher-table {
   /* Style the student table */
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-.degree-table th,
-.degree-table td {
+.teacher-table th,
+.teacher-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
-.degree-table th {
+.teacher-table th {
   background-color: #f2f2f2;
+}
+
+.profile-pic > img{
+  width: 100px;
 }
 .update{
   margin-right: 10px;

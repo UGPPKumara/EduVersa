@@ -1,17 +1,12 @@
-
-
-.course-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .course-table {
+  /* Style the student table */
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.course-table th, .course-table td {
+.course-table th,
+.course-table td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
@@ -20,24 +15,10 @@
 .course-table th {
   background-color: #f2f2f2;
 }
-.action-btn{
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 20px;
+.update{
+  margin-right: 10px;
 }
-
-.action-btn button{
-  padding: 10px 20px;
-  cursor: pointer;
-  
-}
-#delete{
-  background-color: #ff0000;
-  color: #fff;
-  border: 1px solid #ff0000;
-}
-#delete:hover{
-
-  border: 1px solid var(--white);
+.delete{
+  background-color: red !important;
+  border: 1px solid red;
 }

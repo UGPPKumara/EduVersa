@@ -24,13 +24,13 @@ const Sidebar = () => {
               </Link>
           </li>
           <li id='sidebar-menu-item'>            
-            <Link to="/AdminLectures" >
+            <Link to="/TeacherManagement" >
               <BsPersonFill className='icon'/>
               Teachers
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/AluminaManagement" >
               <BsPeopleFill className='icon'/>
               Alumina
               </Link>
