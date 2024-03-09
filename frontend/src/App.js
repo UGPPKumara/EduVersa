@@ -5,8 +5,8 @@ import StudentMain from './Assests/Components/Student/StudentPages/StudentMain/S
 
 function App() {
   return (
-    <AdminMain/> 
-    // <StudentMain/>  
+    // <AdminMain/> 
+    <StudentMain/>  
   );
 }
 

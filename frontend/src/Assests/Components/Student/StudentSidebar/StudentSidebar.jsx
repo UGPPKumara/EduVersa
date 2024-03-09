@@ -1,14 +1,17 @@
 import React from 'react'
 import '../../Admin/Sidebar/Sidebar.css'
 import { Link } from 'react-router-dom'
-import { BsBookFill, BsBookmarksFill, BsFileTextFill, BsGearFill, BsPeopleFill, BsPersonBadge, BsPersonFill } from 'react-icons/bs'
+import {
+  BsBookFill,
+  BsChatSquareDotsFill,
+  BsGearFill,
+  BsPeopleFill,
+  BsPersonFill
+} from 'react-icons/bs'
 
 const Sidebar = () => {
- 
-
   return (
-    <div className='sidebar'>
-      
+    <div className='sidebar'>     
       <div className='sidebar-menu'>
         <ul>
           <li>
@@ -16,8 +19,7 @@ const Sidebar = () => {
               <BsBookFill className='icon'/>
              Courses
               </Link>
-          </li>
-          
+          </li>          
           <li id='sidebar-menu-item'>            
             <Link to="/AdminLectures" >
               <BsPersonFill className='icon'/>
@@ -25,15 +27,14 @@ const Sidebar = () => {
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/StudentSelfLearning" >
               <BsPeopleFill className='icon'/>
               Self Learning
               </Link>
-          </li>
-        
+          </li>   
           <li className='sidebar-menu-item'>
             <Link to="/" >
-              <BsGearFill className='icon'/>
+              <BsChatSquareDotsFill className='icon'/>
               Chat
               </Link>
           </li>

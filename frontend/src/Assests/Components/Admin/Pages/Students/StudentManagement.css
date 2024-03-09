@@ -5,6 +5,7 @@
   align-items: center;
   margin-bottom: 10px;
   height: 100px;
+  color: var(--white);
 }
 
 .add-student-button , .add-teacher-button, .add-alumina-button, .add-faculty-button, .add-degree-button, .add-course-button{

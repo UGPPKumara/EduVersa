@@ -1,14 +1,16 @@
 import React from 'react'
 import course from '../../../../Images/course.avif'
 import './StudentCourses.css'
+import { Link } from 'react-router-dom';
 
 const StudentCourses = () => {
   return (
     <div className="student-courses">
       <div className="features">
-        <button>Ask Question</button>
-        <button>Self Learning</button>
-        <button>Chat</button>
+        <button className='features-btn-1'>Ask Question</button>
+        <button className='features-btn-2'>Self Learning</button>
+        
+        <button className='features-btn-3 ' >Chat</button>
       </div>
       <h2>Course overview</h2>
 

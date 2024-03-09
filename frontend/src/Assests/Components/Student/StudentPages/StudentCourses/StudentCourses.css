@@ -1,5 +1,5 @@
 .student-courses{
-  padding: 20px;
+  /* padding: 20px; */
   background-color: var(--white);
   width: 100%;
   /* overflow-y: auto; */
@@ -13,9 +13,9 @@
   justify-content:space-around;
   width: 100%;
   gap: 200px;
-  background-color: var(--dark-blue-2);
+  background-color: whitesmoke;
   padding: 20px;
-  box-shadow: 0px 5px 10px 0px #00000025;
+  /* box-shadow: 0px 5px 10px 0px #00000025; */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -23,12 +23,21 @@
   
 }
 .features > button{
-  background-color: var(--white);
+  /* background-color: var(--white); */
   padding: 25px 50px;
   font-size: 20px;
-  color: var(--dark-blue-2);
+  color: var(--white);
   border: none;
   width: 250px;
+} 
+.features-btn-1{
+  background-color: red;
+}
+.features-btn-2{
+  background-color: gold;
+}
+.features-btn-3{
+  background-color: green;
 }
 .features > button:hover{
   background-color: var(--light-blue);
@@ -38,12 +47,12 @@
   color: var(--white);
 }
 
-h2{
+.student-courses > h2{
  font-weight: 500;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--dark-blue);
 }
 .courses{
   display: flex;
