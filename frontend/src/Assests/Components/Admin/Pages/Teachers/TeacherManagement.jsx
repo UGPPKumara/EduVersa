@@ -20,7 +20,7 @@ const TeacherManagement = () => {
     <div className="teacher-management">
       <div className="teacher-header">
         <h2>Teacher Management</h2>
-        <button onClick={openModal} className="add-teacher-button">
+        <button onClick={openModal} className="add-teacher-button btn">
           Add New Teacher
         </button>
       </div>
@@ -54,8 +54,8 @@ const TeacherManagement = () => {
               <td>CS</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -70,8 +70,8 @@ const TeacherManagement = () => {
               <td>CS</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -86,8 +86,8 @@ const TeacherManagement = () => {
               <td>CS</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
         </tbody>

@@ -15,7 +15,7 @@ const CourseManagement = () => {
     <div className='course-management'>
       <div className="course-header">
         <h2>Course Management</h2>            
-        <button onClick={openModal} className="add-course-button">
+        <button onClick={openModal} className="add-course-button btn">
           Add New Course
         </button>    
       </div>
@@ -42,8 +42,8 @@ const CourseManagement = () => {
               <td>Teacher 01</td>
               
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr>
@@ -55,8 +55,8 @@ const CourseManagement = () => {
               <td>Teacher 01</td>
               
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr>
@@ -68,8 +68,8 @@ const CourseManagement = () => {
               <td>Teacher 01</td>
               
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr>
@@ -81,10 +81,11 @@ const CourseManagement = () => {
               <td>Teacher 01</td>
               
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
+            
         </tbody>
       </table>
 

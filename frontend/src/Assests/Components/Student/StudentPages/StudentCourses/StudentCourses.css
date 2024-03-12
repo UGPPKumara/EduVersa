@@ -1,3 +1,4 @@
+
 .student-courses{
   /* padding: 20px; */
   background-color: var(--white);
@@ -13,31 +14,32 @@
   justify-content:space-around;
   width: 100%;
   gap: 200px;
-  background-color: whitesmoke;
+  background-color: white;
+  /* filter: blur(60%); */
   padding: 20px;
   /* box-shadow: 0px 5px 10px 0px #00000025; */
   position: sticky;
   top: 0;
   z-index: 100;
-
   
 }
 .features > button{
-  /* background-color: var(--white); */
+  /* background-color: var(--light-blue); */
   padding: 25px 50px;
   font-size: 20px;
   color: var(--white);
   border: none;
   width: 250px;
+  height: 80px;
 } 
 .features-btn-1{
-  background-color: red;
+  background-color: rgb(255, 0, 0);
 }
 .features-btn-2{
-  background-color: gold;
+  background-color: rgb(224, 190, 0);
 }
 .features-btn-3{
-  background-color: green;
+  background-color: rgb(0, 223, 0);
 }
 .features > button:hover{
   background-color: var(--light-blue);
@@ -87,15 +89,19 @@
   margin-bottom: 10px;
   text-align: center;
 }
-.course > button{
+.view-btn {
   background-color: var(--dark-blue);
   padding: 5px 10px;
   font-size: 20px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 360px;
+  border: 1px solid var(--dark-blue);
+
+  color: var(--white);
 }
-.course > button:hover{
+.view-btn:hover{
   background-color: var(--light-blue);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  border: 1px solid white;
 }

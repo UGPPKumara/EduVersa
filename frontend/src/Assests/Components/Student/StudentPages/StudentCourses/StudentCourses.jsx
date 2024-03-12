@@ -1,7 +1,7 @@
 import React from 'react'
 import course from '../../../../Images/course.avif'
 import './StudentCourses.css'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const StudentCourses = () => {
   return (
@@ -20,42 +20,54 @@ const StudentCourses = () => {
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
         <div className="course">
           <img src={course} alt="course" />
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
         <div className="course">
           <img src={course} alt="course" />
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
         <div className="course">
           <img src={course} alt="course" />
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
         <div className="course">
           <img src={course} alt="course" />
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
         <div className="course">
           <img src={course} alt="course" />
           <h3>IS2103 - Agile Software Development</h3>
           <h4>Year II Semester II</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <button>View</button>
+          <Link to="/CourseView">
+          <button className='view-btn'>View</button>
+          </Link>
         </div>
       </div>
      

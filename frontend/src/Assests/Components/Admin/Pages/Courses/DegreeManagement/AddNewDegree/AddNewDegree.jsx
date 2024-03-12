@@ -49,7 +49,7 @@ const AddNewDegree = ({ isOpen, onRequestClose, onSave }) => {
             onChange={handleChange}
           />
         </label>
-        <button type="submit">Save Degree</button>
+        <button type="submit" className='btn'>Save Degree</button>
       </form>
     </Modal>
   );

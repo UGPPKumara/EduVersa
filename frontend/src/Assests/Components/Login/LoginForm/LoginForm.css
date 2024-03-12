@@ -1,0 +1,58 @@
+ 
+.login-form-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.login-form-container-fluid{
+  width: 75%;
+  padding: 0 80px;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  margin: 80px;
+  width: 100%;
+  padding: 20px;
+  gap: 1rem;
+  border: 1px solid var(--Dark-Blue, #180C43);
+  background: var(--White, #FFF);
+
+}
+.login-form > h2{
+  font-weight: 500 ;
+}
+.login-form-col{
+  display: flex;
+  flex-direction: column;
+}
+.login-label{
+  width: auto;
+}
+.inbox{
+  width: auto;
+}
+.login-btn{
+  background: var(--blue);
+  color: var(--White, #FFF);
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.login-btn:hover{
+  background: var(--dark-blue);
+  transition: all 0.5s;
+
+}
+.login-form > a{
+  color: var(--blue);
+  text-decoration: none;
+}
+.login-form > a:hover{
+  color: var(--dark-blue);
+  transition: all 0.5s;
+}
+
