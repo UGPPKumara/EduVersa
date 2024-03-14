@@ -12,50 +12,50 @@ const Sidebar = () => {
       <div className='sidebar-menu'>
         <ul>
           <li className='sidebar-menu-item'>
-            <Link exact to="/AdminDashboard" >
+            <Link exact to="/admin" >
               <BsGrid1X2Fill className='icon'/>
               Dashboard
               </Link>
           </li>
           <li className='sidebar-menu-item'>            
-            <Link to="/StudentManagement" >
+            <Link to="/admin/StudentManagement" >
               <BsPersonBadge className='icon'/>
               Students
               </Link>
           </li>
           <li id='sidebar-menu-item'>            
-            <Link to="/TeacherManagement" >
+            <Link to="/admin/TeacherManagement" >
               <BsPersonFill className='icon'/>
               Teachers
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/AluminaManagement" >
+            <Link to="/admin/AluminaManagement" >
               <BsPeopleFill className='icon'/>
               Alumina
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/CourseManagement" >
+            <Link to="/admin/CourseManagement" >
               <BsBookFill className='icon'/>
               Courses
               </Link>
             {/* Sub-links for Courses */}
             <ul className="sub-links">
               <li className='sub-links-item'>
-                <Link to="/FacultyManagement" >
+                <Link to="/admin/FacultyManagement" >
                   <BsBookFill className='icon'/>
                   Faculty Management
                 </Link>
               </li>
               <li className='sub-links-item'>
-                <Link to="/DegreeManagement" >
+                <Link to="/admin/DegreeManagement" >
                   <BsBookmarksFill className='icon'/>
                   Degree Management
                 </Link>
               </li>
               <li className='sub-links-item'>
-                <Link to="/CourseManagement" >
+                <Link to="/admin/CourseManagement" >
                   <BsFileTextFill className='icon'/>
                   Course Management
                 </Link>
@@ -63,7 +63,7 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/admin" >
               <BsGearFill className='icon'/>
               Settings
               </Link>

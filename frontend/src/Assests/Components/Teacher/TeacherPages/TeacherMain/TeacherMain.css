@@ -1,13 +1,13 @@
 body{
-  height:100vh;
+  height: 100vh;
 }
-.StudentMain{
+.TeacherMain{
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
-.sidebar-footer{
+.sidebar-home{
   display: flex;
   flex: 1;
 }

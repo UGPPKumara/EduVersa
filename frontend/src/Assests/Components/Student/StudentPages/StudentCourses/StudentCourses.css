@@ -1,9 +1,9 @@
 
-.student-courses{
-  /* padding: 20px; */
+.student-courses , .course-view {
+  padding: 20px;
   background-color: var(--white);
   width: 100%;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   height: 90vh;
 }
 
@@ -23,25 +23,35 @@
   z-index: 100;
   
 }
-.features > button{
-  /* background-color: var(--light-blue); */
+
+.features-btn-1{
+  background-color: rgb(255, 0, 0);
   padding: 25px 50px;
   font-size: 20px;
   color: var(--white);
   border: none;
   width: 250px;
   height: 80px;
-} 
-.features-btn-1{
-  background-color: rgb(255, 0, 0);
 }
 .features-btn-2{
   background-color: rgb(224, 190, 0);
+  padding: 25px 50px;
+  font-size: 20px;
+  color: var(--white);
+  border: none;
+  width: 250px;
+  height: 80px;
 }
 .features-btn-3{
   background-color: rgb(0, 223, 0);
+  padding: 25px 50px;
+  font-size: 20px;
+  color: var(--white);
+  border: none;
+  width: 250px;
+  height: 80px;
 }
-.features > button:hover{
+.features-btn-2:hover, .features-btn-1:hover, .features-btn-3:hover{
   background-color: var(--light-blue);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;

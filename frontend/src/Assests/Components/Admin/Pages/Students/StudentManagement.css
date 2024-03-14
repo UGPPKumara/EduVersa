@@ -1,3 +1,6 @@
+.student-management{
+  
+}
 .student-header , .teacher-header , .alumina-header, .admin-header, .faculty-header, .degree-header , .course-header{
   display: flex;
   background-color: var(--dark-blue);

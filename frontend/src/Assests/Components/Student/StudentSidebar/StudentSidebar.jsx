@@ -15,31 +15,31 @@ const Sidebar = () => {
       <div className='sidebar-menu'>
         <ul>
           <li>
-            <Link to="/StudentCourses ">
+            <Link to="/student">
               <BsBookFill className='icon'/>
              Courses
               </Link>
           </li>          
           <li id='sidebar-menu-item'>            
-            <Link to="/AdminLectures" >
+            <Link to="/student" >
               <BsPersonFill className='icon'/>
               Ask Question
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/StudentSelfLearning" >
+            <Link to="/student/StudentSelfLearning" >
               <BsPeopleFill className='icon'/>
               Self Learning
               </Link>
           </li>   
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/student" >
               <BsChatSquareDotsFill className='icon'/>
               Chat
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/student" >
               <BsGearFill className='icon'/>
              Setting
               </Link>

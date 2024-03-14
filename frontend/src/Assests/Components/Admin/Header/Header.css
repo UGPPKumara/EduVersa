@@ -12,7 +12,7 @@
 .menu-icon{
   display: none;
 }
-.logo{
+.header-logo{
   height: 40px;
   width: auto;
 }
@@ -26,4 +26,13 @@
   display: flex;
   align-items: center;
   gap: 40px;
+}
+.logout-button{
+  padding: 10px;
+  border:1px solid var(--white);
+  font-size: 16px;
+}
+.logout-button:hover{
+  background-color: var(--blue);
+  color: var(--white);
 }

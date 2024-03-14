@@ -6,7 +6,7 @@ const CourseView = () => {
     
     <div className="course-view">
       <div className="course-view-backlink">
-        <a href="/StudentCourses">Home</a> &gt; <a href="/CourseView">IS2103 - Agile Software Development</a>
+        <a href="/student">Home</a> &gt; <a href="/student/CourseView">IS2103 - Agile Software Development</a>
       </div>
       <div className="course-view-content">
         <div className="course-content-header">

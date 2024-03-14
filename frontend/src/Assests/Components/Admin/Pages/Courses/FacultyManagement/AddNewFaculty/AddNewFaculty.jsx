@@ -40,3 +40,4 @@ const AddNewFaculty = ({ isOpen, onRequestClose }) => {
 };
 
 export default AddNewFaculty;
+
