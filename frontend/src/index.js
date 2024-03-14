@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
+//Login
 import UserLogin from './Assests/Components/Login/UserLogin/UserLogin';
 import LoginForm from './Assests/Components/Login/LoginForm/LoginForm';
+//Admin
+import Profile from './Assests/Components/Admin/Pages/Profile/Profile'; // Make sure this import is correct
 import AdminMain from './Assests/Components/Admin/Pages/AdminMain/AdminMain';
 import AdminDashboard from './Assests/Components/Admin/Pages/Dashboard/AdminDashboard';
 import StudentManagement from './Assests/Components/Admin/Pages/Students/StudentManagement';
@@ -12,12 +16,15 @@ import AdminLectures from './Assests/Components/Admin/Pages/Lectures/AdminLectur
 import CourseManagement from './Assests/Components/Admin/Pages/Courses/CourseManagement/CourseManagement';
 import FacultyManagement from './Assests/Components/Admin/Pages/Courses/FacultyManagement/FacultyManagement';
 import DegreeManagement from './Assests/Components/Admin/Pages/Courses/DegreeManagement/DegreeManagement';
+//Student
 import StudentMain from './Assests/Components/Student/StudentPages/StudentMain/StudentMain';
 import StudentCourses from './Assests/Components/Student/StudentPages/StudentCourses/StudentCourses';
 import CourseView from './Assests/Components/Student/StudentPages/CourseView/CourseView';
 import StudentSelfLearning from './Assests/Components/Student/StudentPages/StudentSelfLearning/StudentSelfLearning';
-import Profile from './Assests/Components/Admin/Pages/Profile/Profile'; // Make sure this import is correct
-import './index.css';
+//Teacher
+import TeacherMain from './Assests/Components/Teacher/TeacherPages/TeacherMain/TeacherMain';
+import TeacherDashboard from './Assests/Components/Teacher/TeacherPages/TeacherDashboard/TeacherDashboard';
+import SelfLearninManagement from './Assests/Components/Teacher/TeacherPages/SelfLearningManagement/SelfLearningManagement';
 
 const router = createBrowserRouter([
   {
@@ -89,6 +96,25 @@ const router = createBrowserRouter([
         element: <StudentSelfLearning/>
       },
     ],
+  },
+  {
+    path: 'teacher',
+    element: <TeacherMain/>,
+    children :[
+      {
+        index: true,
+        element: <TeacherDashboard/>
+      },
+      {
+        path: 'TeacherProfile',
+        element: <Profile/>
+      },
+      {
+        path: 'SelfLearninManagement',
+        element: <SelfLearninManagement/>
+      },
+      
+    ]
   }
 ]);
 
