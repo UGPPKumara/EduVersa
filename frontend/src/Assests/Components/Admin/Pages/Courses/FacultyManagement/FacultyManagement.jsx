@@ -13,7 +13,7 @@ const FacultyManagement = () => {
     <div className='faculty-management'>
       <div className="faculty-header">
         <h2>Faculty Management</h2>
-        <button onClick={openModal} className="add-faculty-button">
+        <button onClick={openModal} className="add-faculty-button btn">
           Add New Faculty
         </button>
       </div>
@@ -34,8 +34,8 @@ const FacultyManagement = () => {
               <td>D01</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr>
@@ -44,8 +44,8 @@ const FacultyManagement = () => {
               <td>D01</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr>
@@ -54,9 +54,9 @@ const FacultyManagement = () => {
               <td>D01</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
-              </td>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
+               </td>
             </tr>
         </tbody>
       </table>

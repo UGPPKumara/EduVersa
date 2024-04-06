@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../../../Admin/Header/Header'
 import StudentSidebar from '../../StudentSidebar/StudentSidebar'
-import StudentHome from '../../StudentHome/StudentHome'
+
 import './StudentMain.css'
+import { Outlet } from 'react-router-dom'
 
 const StudentMain = () => {
   return (
@@ -10,7 +11,7 @@ const StudentMain = () => {
       <Header/>
       <div className="sidebar-home">
         <StudentSidebar />
-        <StudentHome />
+        <Outlet />
       </div>
     </div>
   )

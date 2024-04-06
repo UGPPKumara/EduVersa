@@ -92,7 +92,7 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
             name="admissionDate"
           />
         </label>
-        <button type="submit">Save Student</button>
+        <button type="submit" className='btn'>Save Student</button>
       </form>
     </Modal>
   );

@@ -1,44 +1,45 @@
 import React from 'react'
 import '../../Admin/Sidebar/Sidebar.css'
 import { Link } from 'react-router-dom'
-import { BsBookFill, BsBookmarksFill, BsFileTextFill, BsGearFill, BsPeopleFill, BsPersonBadge, BsPersonFill } from 'react-icons/bs'
+import {
+  BsBookFill,
+  BsChatSquareDotsFill,
+  BsGearFill,
+  BsPeopleFill,
+  BsPersonFill
+} from 'react-icons/bs'
 
 const Sidebar = () => {
- 
-
   return (
-    <div className='sidebar'>
-      
+    <div className='sidebar'>     
       <div className='sidebar-menu'>
         <ul>
           <li>
-            <Link to="/StudentCourses ">
+            <Link to="/student">
               <BsBookFill className='icon'/>
              Courses
               </Link>
-          </li>
-          
+          </li>          
           <li id='sidebar-menu-item'>            
-            <Link to="/AdminLectures" >
+            <Link to="/student" >
               <BsPersonFill className='icon'/>
               Ask Question
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/student/StudentSelfLearning" >
               <BsPeopleFill className='icon'/>
               Self Learning
               </Link>
-          </li>
-        
+          </li>   
           <li className='sidebar-menu-item'>
-            <Link to="/" >
-              <BsGearFill className='icon'/>
+            <Link to="/student" >
+              <BsChatSquareDotsFill className='icon'/>
               Chat
               </Link>
           </li>
           <li className='sidebar-menu-item'>
-            <Link to="/" >
+            <Link to="/student" >
               <BsGearFill className='icon'/>
              Setting
               </Link>

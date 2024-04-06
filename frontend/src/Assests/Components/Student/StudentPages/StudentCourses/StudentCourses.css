@@ -1,8 +1,9 @@
-.student-courses{
+
+.student-courses , .course-view {
   padding: 20px;
   background-color: var(--white);
   width: 100%;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   height: 90vh;
 }
 
@@ -13,24 +14,44 @@
   justify-content:space-around;
   width: 100%;
   gap: 200px;
-  background-color: var(--dark-blue-2);
+  background-color: white;
+  /* filter: blur(60%); */
   padding: 20px;
-  box-shadow: 0px 5px 10px 0px #00000025;
+  /* box-shadow: 0px 5px 10px 0px #00000025; */
   position: sticky;
   top: 0;
   z-index: 100;
-
   
 }
-.features > button{
-  background-color: var(--white);
+
+.features-btn-1{
+  background-color: rgb(255, 0, 0);
   padding: 25px 50px;
   font-size: 20px;
-  color: var(--dark-blue-2);
+  color: var(--white);
   border: none;
   width: 250px;
+  height: 80px;
 }
-.features > button:hover{
+.features-btn-2{
+  background-color: rgb(224, 190, 0);
+  padding: 25px 50px;
+  font-size: 20px;
+  color: var(--white);
+  border: none;
+  width: 250px;
+  height: 80px;
+}
+.features-btn-3{
+  background-color: rgb(0, 223, 0);
+  padding: 25px 50px;
+  font-size: 20px;
+  color: var(--white);
+  border: none;
+  width: 250px;
+  height: 80px;
+}
+.features-btn-2:hover, .features-btn-1:hover, .features-btn-3:hover{
   background-color: var(--light-blue);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -38,12 +59,12 @@
   color: var(--white);
 }
 
-h2{
+.student-courses > h2{
  font-weight: 500;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--dark-blue);
 }
 .courses{
   display: flex;
@@ -78,15 +99,19 @@ h2{
   margin-bottom: 10px;
   text-align: center;
 }
-.course > button{
+.view-btn {
   background-color: var(--dark-blue);
   padding: 5px 10px;
   font-size: 20px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 360px;
+  border: 1px solid var(--dark-blue);
+
+  color: var(--white);
 }
-.course > button:hover{
+.view-btn:hover{
   background-color: var(--light-blue);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  border: 1px solid white;
 }

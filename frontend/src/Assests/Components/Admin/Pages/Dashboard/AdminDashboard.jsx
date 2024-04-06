@@ -16,7 +16,7 @@ const AdminDashboard = () => {
             <h1>1000</h1>
           </div>
 
-          <Link to="/StudentManagement"> View Details</Link>
+          <Link to="/admin/StudentManagement"> View Details</Link>
 
         </div>
         <div className="count-card-2">
@@ -24,7 +24,7 @@ const AdminDashboard = () => {
           <h3>Total Teachers</h3>
           <h1>60</h1>
           </div>
-          <Link to="/TeacherManagement"> View Details</Link>
+          <Link to="/admin/TeacherManagement"> View Details</Link>
 
         </div>
         <div className="count-card-3">
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
           <h1>50</h1>
 
           </div>
-          <Link to="/AluminaManagement"> View Details</Link>
+          <Link to="/admin/AluminaManagement"> View Details</Link>
 
         </div>
         <div className="count-card-4">
@@ -44,7 +44,7 @@ const AdminDashboard = () => {
           <h1>50</h1>
 
           </div>
-          <Link to="/CourseManagement"> View Details</Link>
+          <Link to="/admin/CourseManagement"> View Details</Link>
 
         </div>
       </div>

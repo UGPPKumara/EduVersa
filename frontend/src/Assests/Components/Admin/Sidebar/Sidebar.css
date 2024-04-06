@@ -76,3 +76,14 @@
   transition: all 0.5s ;
   
 }
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0; /* Initially hide the sidebar on smaller screens */
+  }
+
+  .sidebar.closed {
+    width: 100%;
+  }
+}

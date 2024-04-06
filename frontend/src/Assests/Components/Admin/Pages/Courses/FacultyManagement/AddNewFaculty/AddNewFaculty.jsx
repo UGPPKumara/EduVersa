@@ -33,10 +33,11 @@ const AddNewFaculty = ({ isOpen, onRequestClose }) => {
             name="department"
           />
         </label>
-        <button type="submit">Save Faculty</button>
+        <button type="submit" className='btn'>Save Faculty</button>
       </form>
     </Modal>
   );
 };
 
 export default AddNewFaculty;
+

@@ -15,7 +15,7 @@ const DegreeManagement = () => {
     <div className='degree-management'>
       <div className="degree-header">
         <h2>Degree Management</h2>
-        <button onClick={openModal} className="add-degree-button">
+        <button onClick={openModal} className="add-degree-button btn">
           Add New Degree
         </button>
       </div>
@@ -33,26 +33,35 @@ const DegreeManagement = () => {
               <td>SE</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn '>Delete</button>
               </td>
             </tr>
             <tr>
               <td>SE</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn '>Delete</button>
               </td>
             </tr>
             <tr>
               <td>SE</td>
               <td>CIS</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn '>Delete</button>
               </td>
             </tr>
+            <tr>
+              <td>SE</td>
+              <td>CIS</td>
+              <td className='action'>
+                <button className='update btn'>Update</button>
+                <button className='delete btn '>Delete</button>
+              </td>
+            </tr>
+            
         </tbody>
       </table>
 

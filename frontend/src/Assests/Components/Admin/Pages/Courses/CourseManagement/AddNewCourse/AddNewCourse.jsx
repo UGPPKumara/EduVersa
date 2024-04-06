@@ -111,7 +111,7 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
           />
         </label>
         
-        <button type="submit">Save Student</button>
+        <button type="submit" className='btn'>Save Student</button>
       </form>
     </Modal>
   );

@@ -21,7 +21,7 @@ const StudentManagement = () => {
     <div className="student-management">
       <div className="student-header">
         <h2>Student Management</h2>
-        <button onClick={openModal} className="add-student-button">
+        <button onClick={openModal} className="add-student-button btn">
           Add New Student
         </button>
       </div>
@@ -57,8 +57,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -74,8 +74,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+                <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -91,8 +91,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -108,8 +108,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -125,8 +125,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
             <tr >
@@ -142,8 +142,8 @@ const StudentManagement = () => {
               <td>04</td>
               <td>01/10/2022</td>
               <td className='action'>
-                <button className='update'>Update</button>
-                <button className='delete'>Delete</button>
+              <button className='update btn'>Update</button>
+                <button className='delete btn'>Delete</button>
               </td>
             </tr>
         </tbody>

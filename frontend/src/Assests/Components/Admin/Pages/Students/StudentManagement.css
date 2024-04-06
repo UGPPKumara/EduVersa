@@ -1,3 +1,6 @@
+.student-management{
+  
+}
 .student-header , .teacher-header , .alumina-header, .admin-header, .faculty-header, .degree-header , .course-header{
   display: flex;
   background-color: var(--dark-blue);
@@ -5,6 +8,7 @@
   align-items: center;
   margin-bottom: 10px;
   height: 100px;
+  color: var(--white);
 }
 
 .add-student-button , .add-teacher-button, .add-alumina-button, .add-faculty-button, .add-degree-button, .add-course-button{
@@ -12,7 +16,9 @@
   height: 60px;
   margin: 20px;
 }
-
+.add-student-button , .add-teacher-button, .add-alumina-button, .add-faculty-button, .add-degree-button, .add-course-button:hover{
+  border: white;
+}
 .student-header , .teacher-header, .alumina-header, .admin-header, .faculty-header, .degree-header, .course-header > h2{
   padding-left: 20px;
 }
