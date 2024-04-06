@@ -6,7 +6,7 @@ import './index.css';
 import UserLogin from './Assests/Components/Login/UserLogin/UserLogin';
 import LoginForm from './Assests/Components/Login/LoginForm/LoginForm';
 //Admin
-import Profile from './Assests/Components/Admin/Pages/Profile/Profile'; // Make sure this import is correct
+import Profile from './Assests/Components/Admin/Pages/Profile/Profile'; 
 import AdminMain from './Assests/Components/Admin/Pages/AdminMain/AdminMain';
 import AdminDashboard from './Assests/Components/Admin/Pages/Dashboard/AdminDashboard';
 import StudentManagement from './Assests/Components/Admin/Pages/Students/StudentManagement';
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'AdminProfile',
-        element: <Profile/> // Assuming there's a component named Profile
+        element: <Profile/>
       },
       {
         path: 'CourseManagement',
