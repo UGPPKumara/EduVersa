@@ -21,7 +21,7 @@ const Sidebar = () => {
               </Link>
           </li>          
           <li id='sidebar-menu-item'>            
-            <Link to="/student" >
+            <Link to="/student/AskQuestion" >
               <BsPersonFill className='icon'/>
               Ask Question
               </Link>

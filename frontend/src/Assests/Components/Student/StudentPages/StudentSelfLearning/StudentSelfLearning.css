@@ -1,0 +1,60 @@
+.selflearning{
+  padding: 20px;
+  background-color: var(--white);
+  width: 100%;
+  overflow-y: auto;
+  height: 90vh;
+  
+}
+
+.item1{
+  display: flex;
+  flex-direction: column;
+  background-color: #f0eeee;
+  /* padding-bottom: 10px; */
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px ;
+}
+
+.topic1box{
+  display: flex;
+  flex-direction: column;
+  background-color:#e5ecff;
+  /* margin-top: 10px; */
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  padding: 10px 0px 10px 10px;
+}
+.topic-header{
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.topic2box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px; 
+}
+
+
+.topicm{
+  font-weight: 700;
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+}
+
+#description{
+  color: #ffffff;
+  font-size: small;
+  margin-top: 5px;
+  text-align: justify;
+}
+
+#topic1{
+  margin: 5px 0px 5px 10px;
+  font-weight: 550;
+}
+
+.topic2box p a {
+  text-decoration: none;
+}

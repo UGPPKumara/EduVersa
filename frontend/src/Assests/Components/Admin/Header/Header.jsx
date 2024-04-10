@@ -29,7 +29,7 @@ const Header = () => {
       <div className='header-right'>
         <BsFillBellFill className='icon'/>
         <BsFillEnvelopeFill className='icon'/>
-        <Link to="/Profile">
+        <Link to="/student/Profile">
           <BsPersonCircle className='icon'/>
         </Link>
         {/* Add logout button */}

@@ -1,0 +1,35 @@
+.modal-header > h2{
+  color: black;
+}
+
+.main_box{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile_details{
+display: flex;
+flex-direction: column;
+width: 50%;
+
+/* justify-content: center; Horizontally center align */
+align-items: center; /* Vertically center align */
+}
+
+.profile_update{
+display: flex;
+flex-direction: column;
+/* align-items: center;  */
+}
+
+.info_box{
+display: flex;
+flex-direction: row;
+padding: 5px;
+}
+
+.propic img {
+width: 200px; /* Set the desired width */
+height: 200px; /* Set the desired height */
+border-radius: 10%;
+}

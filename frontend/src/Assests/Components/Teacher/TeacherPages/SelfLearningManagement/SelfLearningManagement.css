@@ -1,0 +1,43 @@
+.add-teacher-button{
+  width: auto;
+  height: 60px;
+  margin: 20px;
+}
+.add-teacher-button:hover{
+  border: white;
+}
+.teacher-table {
+  /* Style the student table */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.teacher-table th,
+.teacher-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  /* width: 60px; */
+}
+
+.teacher-table th {
+  background-color: #f2f2f2;
+}
+
+#Description-column {
+  max-width: 200px;
+}
+
+
+.update{
+  margin-right: 10px;
+}
+.delete{
+  background-color: red !important;
+  border: 1px solid red;
+}
+
+p a {
+  text-decoration: none;
+}
