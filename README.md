@@ -8,7 +8,9 @@
 
  🌟 [Click Here](https://eduversa-f2b8a.web.app/) to go to the EduVersa 🍽️✨ <br><br>
 Admin Email - admin@gmail.com<br>
-Admin Password - admin@123
+Admin Password - admin@123 
+
+🌟 [Click Here](https://www.figma.com/design/SSj7yWLXtXoFcHBvSA6v59/EduVersa?node-id=0-1&t=dG2PTYZw3WxsZ6Jy-1) to go to the figma file. 🍽️✨
 
 # ScreenShot
 
