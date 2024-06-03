@@ -5,6 +5,7 @@ import './index.css';
 //Login
 import UserLogin from './Assests/Components/Login/UserLogin/UserLogin';
 import LoginForm from './Assests/Components/Login/LoginForm/LoginForm';
+import ForgotPassword from './Assests/Components/Login/ForgotPassword/ForgotPassword';
 //Admin
 import Profile from './Assests/Components/Admin/Pages/Profile/Profile'; 
 import AdminMain from './Assests/Components/Admin/Pages/AdminMain/AdminMain';
@@ -25,6 +26,8 @@ import StudentSelfLearning from './Assests/Components/Student/StudentPages/Stude
 import TeacherMain from './Assests/Components/Teacher/TeacherPages/TeacherMain/TeacherMain';
 import TeacherDashboard from './Assests/Components/Teacher/TeacherPages/TeacherDashboard/TeacherDashboard';
 import SelfLearninManagement from './Assests/Components/Teacher/TeacherPages/SelfLearningManagement/SelfLearningManagement';
+import AskQuestion from './Assests/Components/Student/StudentPages/AskQuestion/AskQuestion';
+import TeacherCourseView from './Assests/Components/Teacher/TeacherPages/TeacherDashboard/TeacherCourseView/TeacherCourseView';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LoginForm/>
+      },
+      {
+        path:'ForgotPassword',
+        element:<ForgotPassword/>
       }
     ],
   },
@@ -95,6 +102,14 @@ const router = createBrowserRouter([
         path: 'StudentSelfLearning',
         element: <StudentSelfLearning/>
       },
+      {
+        path: 'AskQuestion',
+        element: <AskQuestion/>
+      },
+      {
+        path: 'Profile',
+        element: <Profile/>
+      },
     ],
   },
   {
@@ -112,6 +127,10 @@ const router = createBrowserRouter([
       {
         path: 'SelfLearninManagement',
         element: <SelfLearninManagement/>
+      },
+      {
+        path: 'TeacherCourseView',
+        element: <TeacherCourseView/>
       },
       
     ]

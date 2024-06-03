@@ -1,9 +1,86 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import './AddNewStudent.css';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { db, storage } from '../../../../../../firebase/config';
 
+const AddNewStudent = ({ isOpen, onRequestClose }) => {
+  const [studentData, setStudentData] = useState({
+    profilePicture: null,
+    indexNumber: '',
+    name: '',
+    email: '',
+    password: '',
+    faculty: '',
+    degree: '',
+    semester: '',
+    admissionDate: ''
+  });
 
-const AddNewStudent = ({ isOpen, onRequestClose}) => {
+  const [faculties, setFaculties] = useState([]);
+  const [degrees, setDegrees] = useState([]);
+
+  useEffect(() => {
+    const fetchFaculties = async () => {
+      try {
+        const facultiesCollection = collection(db, 'faculties');
+        const facultiesSnapshot = await getDocs(facultiesCollection);
+        const facultyOptions = facultiesSnapshot.docs.map(doc => doc.data().facultyName);
+        setFaculties(facultyOptions);
+      } catch (error) {
+        console.error('Error fetching faculties:', error);
+      }
+    };
+
+    const fetchDegrees = async () => {
+      try {
+        const degreesCollection = collection(db, 'degrees');
+        const degreesSnapshot = await getDocs(degreesCollection);
+        const degreeOptions = degreesSnapshot.docs.map(doc => doc.data().degreeName);
+        setDegrees(degreeOptions);
+      } catch (error) {
+        console.error('Error fetching degrees:', error);
+      }
+    };
+
+    fetchFaculties();
+    fetchDegrees();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setStudentData((prevData) => ({
+      ...prevData,
+      [name]: files ? files[0] : value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const storageRef = ref(storage, `profilePictures/${studentData.profilePicture.name}`);
+      await uploadBytes(storageRef, studentData.profilePicture);
+      const downloadURL = await getDownloadURL(storageRef);
+
+      // Save student data to the "users" collection with userRole = "student"
+      await addDoc(collection(db, 'users'), {
+        indexNumber: studentData.indexNumber,
+        name: studentData.name,
+        email: studentData.email,
+        password: studentData.password,
+        faculty: studentData.faculty,
+        degree: studentData.degree,
+        semester: studentData.semester,
+        admissionDate: studentData.admissionDate,
+        profilePictureURL: downloadURL,
+        userRole: "student"
+      });
+
+      onRequestClose();
+    } catch (error) {
+      console.error('Error adding document: ', error);
+    }
+  };
 
   return (
     <Modal
@@ -18,12 +95,13 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
           &times;
         </button>
       </div>
-      <form >
-        <label >
+      <form onSubmit={handleSubmit}>
+        <label>
           Profile Picture:
           <input
             type="file"
             accept="image/*"
+            onChange={handleChange}
             name="profilePicture"
           />
         </label>
@@ -32,6 +110,9 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
           <input
             type="text"
             name="indexNumber"
+            value={studentData.indexNumber}
+            onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -39,6 +120,9 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
           <input
             type="text"
             name="name"
+            value={studentData.name}
+            onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -46,6 +130,9 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
           <input
             type="email"
             name="email"
+            value={studentData.email}
+            onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -53,50 +140,72 @@ const AddNewStudent = ({ isOpen, onRequestClose}) => {
           <input
             type="password"
             name="password"
+            value={studentData.password}
+            onChange={handleChange}
+            required
           />
         </label>
         <label>
           Faculty:
-          <select>
-            <option value="someOption">Faculty of Computing</option>
-            <option value="otherOption">Faculty of Management</option>
-            <option value="otherOption">Faculty of Applied Sciences</option>
+          <select
+            name="faculty"
+            value={studentData.faculty}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Faculty</option>
+            {faculties.map((faculty, index) => (
+              <option key={index} value={faculty}>{faculty}</option>
+            ))}
           </select>
         </label>
         <label>
           Degree:
-          <select>
-            <option value="someOption">CIS</option>
-            <option value="otherOption">SE</option>
-            <option value="otherOption">CS</option>
+          <select
+            name="degree"
+            value={studentData.degree}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Degree</option>
+            {degrees.map((degree, index) => (
+              <option key={index} value={degree}>{degree}</option>
+            ))}
           </select>
-       
         </label>
         <label>
           Semester:
-          <select>
-            <option value="someOption">1</option>
-            <option value="otherOption">2</option>
-            <option value="otherOption">3</option>
-            <option value="otherOption">4</option>
-            <option value="otherOption">5</option>
-            <option value="otherOption">6</option>
-            <option value="otherOption">7</option>
-            <option value="otherOption">8</option>
+          <select
+            name="semester"
+            value={studentData.semester}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Semester</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
           </select>
-          </label>
+        </label>
         <label>
           Admission Date:
           <input
             type="date"
             name="admissionDate"
+            value={studentData.admissionDate}
+            onChange={handleChange}
+            required
           />
         </label>
-        <button type="submit" className='btn'>Save Student</button>
+        <button type="submit" className="btn">Save Student</button>
       </form>
     </Modal>
   );
 };
 
 export default AddNewStudent;
-

@@ -1,13 +1,33 @@
-import React from 'react'
-import course from '../../../../Images/course.avif'
-import './StudentCourses.css'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../../../../../firebase/config';
+import './StudentCourses.css';
+import Photo from '../../../../Images/course.avif';
 
 const StudentCourses = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'courses'));
+        const coursesData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setCourses(coursesData);
+      } catch (error) {
+        console.error('Error fetching courses: ', error);
+      }
+    };
+
+    fetchCourses();
+  }, []);
   return (
     <div className="student-courses">
       <div className="features">
+        <Link to="/student/AskQuestion" className=''>
         <button className='features-btn-1'>Ask Question</button>
+        </Link>
+          
         <Link to="/student/StudentSelfLearning" className=''>
           <button className='features-btn-2'>Self Learning</button>
         </Link>
@@ -17,64 +37,21 @@ const StudentCourses = () => {
       <h2>Course overview</h2>
 
       <div className="courses">
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/student/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
-        <div className="course">
-          <img src={course} alt="course" />
-          <h3>IS2103 - Agile Software Development</h3>
-          <h4>Year II Semester II</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolorem expedita minima fuga ipsam aspernatur adipisci possimus id suscipit tempore.</p>
-          <Link to="/CourseView">
-          <button className='view-btn'>View</button>
-          </Link>
-        </div>
+        {courses.map(course => (
+          <div className="course" key={course.id}>
+            <img src={Photo} alt="course" />
+            <h3>{course.courseName}</h3>
+            <h4>{course.semester}</h4>
+            <p>{course.description}</p>
+            <Link to={`/student/CourseView`}>
+              <button className="view-btn">View</button>
+            </Link>
+          </div>
+        ))}
       </div>
-     
-     
-    </div>
+        
+      </div>
+    
   )
 }
 

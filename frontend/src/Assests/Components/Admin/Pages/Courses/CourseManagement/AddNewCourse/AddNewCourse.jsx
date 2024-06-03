@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-
-
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../../../../../../firebase/config';
 
 const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
   const [formData, setFormData] = useState({
@@ -14,18 +14,67 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
     teacher: '',
   });
 
+  const [faculties, setFaculties] = useState([]);
+  const [departments, setDepartments] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    const fetchFaculties = async () => {
+      try {
+        const facultiesCollection = collection(db, 'faculties');
+        const facultiesSnapshot = await getDocs(facultiesCollection);
+        const facultiesData = facultiesSnapshot.docs.map(doc => ({
+          id: doc.id,
+          name: doc.data().facultyName,
+          departments: doc.data().department || [] // Use an empty array if department is not defined
+        }));
+
+        const uniqueFaculties = [...new Set(facultiesData.map(faculty => faculty.name))];
+
+        setFaculties(uniqueFaculties);
+        setDepartments(facultiesData);
+      } catch (error) {
+        console.error('Error fetching faculties:', error);
+      }
+    };
+
+    const fetchTeachers = async () => {
+      try {
+        const teachersCollection = collection(db, 'users');
+        const teachersQuery = query(teachersCollection, where('userRole', '==', 'teacher'));
+        const teachersSnapshot = await getDocs(teachersQuery);
+        const teachersData = teachersSnapshot.docs.map(doc => ({
+          id: doc.id,
+          name: doc.data().name
+        }));
+
+        setTeachers(teachersData);
+      } catch (error) {
+        console.error('Error fetching teachers:', error);
+      }
+    };
+
+    fetchFaculties();
+    fetchTeachers();
+  }, []);
+
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-
-    // If the input is a file input, use files[0] as the value
-    const newValue = type === 'file' ? files[0] : value;
-
-    setFormData((prevData) => ({ ...prevData, [name]: newValue }));
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formData);
+    setFormData({
+      faculty: '',
+      degree: '',
+      year: '',
+      semester: '',
+      courseCode: '',
+      courseName: '',
+      teacher: ''
+    });
     onRequestClose();
   };
 
@@ -43,17 +92,25 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
         </button>
       </div>
       <form onSubmit={handleSubmit}>
-        {/* Add form fields for course details */}
-        
-        
         <label>
           Faculty:
-          <input
-            type="text"
+          <select
             name="faculty"
             value={formData.faculty}
-            onChange={handleChange}
-          />
+            onChange={(e) => {
+              setFormData({
+                ...formData,
+                faculty: e.target.value,
+                department: '' // Reset department when faculty changes
+              });
+            }}
+            required
+          >
+            <option value="">Select Faculty</option>
+            {faculties.map(faculty => (
+              <option key={faculty} value={faculty}>{faculty}</option>
+            ))}
+          </select>
         </label>
         <label>
           Degree:
@@ -62,18 +119,19 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
             name="degree"
             value={formData.degree}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
           Year of Study:
           <input
             type="text"
-            name="degree"
-            value={formData.degree}
+            name="year"
+            value={formData.year}
             onChange={handleChange}
+            required
           />
         </label>
-
         <label>
           Semester:
           <input
@@ -81,6 +139,7 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
             name="semester"
             value={formData.semester}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -90,6 +149,7 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
             name="courseCode"
             value={formData.courseCode}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
@@ -99,19 +159,26 @@ const AddNewCourse = ({ isOpen, onRequestClose, onSave }) => {
             name="courseName"
             value={formData.courseName}
             onChange={handleChange}
+            required
           />
         </label>
         <label>
           Teacher:
-          <input
-            type="text"
+          <select
             name="teacher"
             value={formData.teacher}
             onChange={handleChange}
-          />
+            required
+          >
+            <option value="">Select Teacher</option>
+            {teachers.map(teacher => (
+              <option key={teacher.id} value={teacher.name}>{teacher.name}</option>
+            ))}
+          </select>
         </label>
-        
-        <button type="submit" className='btn'>Save Student</button>
+        <button type="submit" className="btn">
+          Add new course
+        </button>
       </form>
     </Modal>
   );

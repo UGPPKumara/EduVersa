@@ -1,15 +1,60 @@
-/* eslint-disable react/jsx-no-undef */
-import React, { useState } from 'react';
-import './DegreeManagement.css'; // Make sure to create the CSS file
+import React, { useState, useEffect } from 'react';
+import './DegreeManagement.css';
 import AddNewDegree from './AddNewDegree/AddNewDegree';
-import '../../Students/StudentManagement.css'
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import db from '../../../../../../firebase/config';
 
 const DegreeManagement = () => {
- 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [degrees, setDegrees] = useState([]);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const addDegree = async (newDegree) => {
+    try {
+      // Add degree to Firestore
+      const docRef = await addDoc(collection(db, 'degrees'), newDegree);
+      console.log('Document written with ID: ', docRef.id);
+
+      // Update degrees state with the new degree
+      setDegrees([...degrees, newDegree]);
+      closeModal();
+    } catch (error) {
+      console.error('Error adding document: ', error);
+    }
+  };
+
+  const deleteDegree = async (degreeId) => {
+    // Confirmation message before deleting
+    const confirmed = window.confirm('Are you sure you want to delete this degree?');
+    if (!confirmed) return;
+
+    try {
+      // Delete degree from Firestore
+      await deleteDoc(doc(db, 'degrees', degreeId));
+      
+      // Update degrees state by filtering out the deleted degree
+      const updatedDegrees = degrees.filter(degree => degree.id !== degreeId);
+      setDegrees(updatedDegrees);
+    } catch (error) {
+      console.error('Error deleting document: ', error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchDegrees = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'degrees'));
+        const degreesData = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setDegrees(degreesData);
+      } catch (error) {
+        console.error('Error fetching degrees: ', error);
+      }
+    };
+
+    fetchDegrees();
+  }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
   return (
     <div className='degree-management'>
@@ -29,46 +74,20 @@ const DegreeManagement = () => {
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>SE</td>
-              <td>CIS</td>
+          {degrees.map((degree, index) => (
+            <tr key={index}>
+              <td>{degree.degreeName}</td>
+              <td>{degree.department}</td>
               <td className='action'>
                 <button className='update btn'>Update</button>
-                <button className='delete btn '>Delete</button>
+                <button className='delete btn' onClick={() => deleteDegree(degree.id)}>Delete</button>
               </td>
             </tr>
-            <tr>
-              <td>SE</td>
-              <td>CIS</td>
-              <td className='action'>
-                <button className='update btn'>Update</button>
-                <button className='delete btn '>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SE</td>
-              <td>CIS</td>
-              <td className='action'>
-                <button className='update btn'>Update</button>
-                <button className='delete btn '>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td>SE</td>
-              <td>CIS</td>
-              <td className='action'>
-                <button className='update btn'>Update</button>
-                <button className='delete btn '>Delete</button>
-              </td>
-            </tr>
-            
+          ))}
         </tbody>
       </table>
 
-      <AddNewDegree
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-      />
+      <AddNewDegree isOpen={isModalOpen} onRequestClose={closeModal} addDegree={addDegree} />
     </div>
   );
 }
